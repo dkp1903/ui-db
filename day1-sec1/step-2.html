@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function inputHandler(source, target){
+       document.getElementById(target).value = source.value;
+    }
+    function searchHandler(source, target){
+        document.getElementById(target).value = source.value;
+    }
+    function colorHandler(source, target){
+        document.getElementById(target).value = source.value;
+    }
+
+    function handler(source, target){
+        document.getElementById(target).value = source.value;
+    }
+</script>
+<body>
+   
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Input Name</th>
+                <th>As rendered By Browser</th>
+                <th>Value Entered</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> Text </td>
+                <td> <input oninput="inputHandler(this, 'textop')" type="text"> </td>
+                <td> <output id="textop"></output> </td>
+            </tr>
+            <tr>
+                <td> Search </td>
+                <td> <input oninput="searchHandler(this, 'searchop')" type="search"> </td>
+                <td> <output id="searchop"></output> </td>
+            </tr>
+            <tr>
+                <td> Color </td>
+                <td> <input oninput="handler(this, 'colorop')" type="color"> </td>
+                <td> <output id="colorop"></output> </td>
+            </tr>
+            <tr>
+                <td> Number </td>
+                <td> <input oninput="handler(this, 'numberop')" type="number"> </td>
+                <td> <output id="numberop"></output> </td>
+            </tr>
+            <tr>
+                <td> Range </td>
+                <td> <input oninput="handler(this, 'rangeop')" type="range"> </td>
+                <td> <output id="rangeop"></output> </td>
+            </tr>
+            <tr>
+                <td> Date </td>
+                <td> <input oninput="handler(this, 'dateop')" type="date"> </td>
+                <td> <output id="dateop"></output> </td>
+            </tr>
+
+            <tr>
+                <td> Date Time Local</td>
+                <td> <input oninput="handler(this, 'datetimelocalop')" type="datetime-local"> </td>
+                <td> <output id="datetimelocalop"></output> </td>
+            </tr>
+            <tr>
+                <td> Week </td>
+                <td> <input oninput="handler(this, 'numberop')" type="week"> </td>
+                <td> <output id="weekop"></output> </td>
+            </tr>
+            <tr>
+                <td> Month </td>
+                <td> <input oninput="handler(this, 'monthop')" type="month"> </td>
+                <td> <output id="monthop"></output> </td>
+            </tr>
+            <tr>
+                <td> URL </td>
+                <td> <input oninput="handler(this, 'urlop')" type="url"> </td>
+                <td> <output id="urlop"></output> </td>
+            </tr>
+            <tr>
+                <td> Telephone </td>
+                <td> <input type="tel"> </td>
+                <td> <output></output> </td>
+            </tr>
+            <tr>
+                <td> eMail </td>
+                <td> <input type="email"> </td>
+                <td> <output></output> </td>
+            </tr>
+            <tr>
+                <td>Progress</td>
+                <td><input min="0" max="1" step="0.1" oninput="inputHandler(this, 'progop')"></td>
+                <td><progress id="progop"></progress></td>
+            </tr>
+            <tr>
+                <td>Meter</td>
+                <td><meter low="0.6" high="0.8" optimum="0.7"></meter></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
