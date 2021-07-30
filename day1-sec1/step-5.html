@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 900px;
+            margin: 0px auto;
+        }
+        header{
+            height: 100px;
+            font-size: 30px;
+            color: gainsboro;
+            line-height: 100px;
+        }
+        footer{
+            height: 50px;
+            font-size: 20px;
+            color: gainsboro;
+            line-height: 50px;
+        }
+        header, footer{
+            background-color: dimgray;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 900px;
+        }
+        section{
+            position: relative;
+            height: 200px;
+            background-color: lightslategrey;
+            width: 900px;
+        }
+        article{
+            width: 300px;
+            position: absolute;
+        }
+        article:nth-child(1){
+            background-color: indianred;
+            left: 0px;
+            top: 0px;
+        }
+        article:nth-child(2){
+            background-color: goldenrod;
+            left: 300px;
+            top: 0px;
+        }
+        article:nth-child(3){
+            background-color: forestgreen;
+            left: 600px;
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            My Application
+        </header>
+        <section>
+            <article>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla hic libero at laudantium, nisi suscipit laboriosam, quas repellat alias, officiis illum vel tempore sit! At odit quas veniam facere aperiam?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla hic libero at laudantium, nisi suscipit laboriosam, quas repellat alias, officiis illum vel tempore sit! At odit quas veniam facere aperiam?
+            </article>
+            <article>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla hic libero at laudantium, nisi suscipit laboriosam, quas repellat alias, officiis illum vel tempore sit! At odit quas veniam facere aperiam?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla hic libero at laudantium, nisi suscipit laboriosam, quas repellat alias, officiis illum vel tempore sit! At odit quas veniam facere aperiam?
+            </article>
+            <article>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla hic libero at laudantium, nisi suscipit laboriosam, quas repellat alias, officiis illum vel tempore sit! At odit quas veniam facere aperiam?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla hic libero at laudantium, nisi suscipit laboriosam, quas repellat alias, officiis illum vel tempore sit! At odit quas veniam facere aperiam?
+            </article>
+        </section>
+        <footer>
+            &copy; copyrights reserved by my company 2021
+        </footer>
+    </div>
+</body>
+</html>
