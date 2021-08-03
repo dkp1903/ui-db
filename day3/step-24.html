@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React</title>
+
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<!-- type="text/babel" is important for hinting babel to convert JSX into react code -->
+<script type="text/babel">
+  // var element = <ol>
+  //                 <li>List Item 1</li>
+  //                 <li>List Item 2</li>
+  //                 <li>List Item 3</li>
+  //               </ol>
+  
+  // Function component
+  function Elm() {
+    return (
+      <ol>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+      </ol>
+    );
+  }
+
+  // Class object
+  class Element extends React.Component {
+    // This class can have properties
+    list = "List Item";
+    avengers = ["Ironman", "Hulk", "Black Widow", "Scarlet Witch"];
+    render() {
+      // return(
+      //   <ol>
+      //     <li>{this.list} 1</li>
+      //     <li>{this.list} 2</li>
+      //     <li>{this.list} 3</li>
+      //     <li>{this.list} 4</li>
+      //   </ol>
+      // )
+
+      return(
+        <ol>  
+          {this.avengers.map((val, idx)=><li key={idx}>{val}</li>)  }
+        </ol>
+      );
+    }
+  }
+  
+
+  onload = function() {
+    // ReactDOM.render(element, document.getElementById("root"));
+    // ReactDOM.render(<Elm />, document.getElementById("root"));
+    ReactDOM.render(<Element />, document.getElementById("root"));
+  }
+</script>
+
+<body>
+  
+  <div id="root"></div>
+</body>
+</html>
