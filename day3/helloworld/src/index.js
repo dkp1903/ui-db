@@ -18,6 +18,7 @@ remove a component : Remove
     componentWillUnmount()
 */
 class ChildComp extends Component{
+  state = {}
   constructor(){
     super();
     console.log("ChildComp's constructor was called")
