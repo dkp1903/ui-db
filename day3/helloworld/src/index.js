@@ -36,6 +36,7 @@ class ChildComp extends Component{
   }
   getSnapshotBeforeUpdate(){
     console.log("ChildComp's getSnapshotBeforeUpdate was called");
+    return {}
   }
   componentDidUpdate(){
     console.log("ChildComp's componentDidUpdate was called");
@@ -47,26 +48,35 @@ class ChildComp extends Component{
     console.log("ChildComp render was called")
     return <div>
       <h1>Child Component</h1>
+      <h2>Power is : { this.props.pow }</h2>
     </div>
   }
 }
 class MainApp extends Component{
+  state = {
+    power : 0,
+    show : true
+  }
   constructor(){
     super();
     console.log("MainApp's constructor was called");
   }
   static getDerivedStateFromProps(){
-    console.log("MainApp's getDerivedStateFromProps was called")
+    console.log("MainApp's getDerivedStateFromProps was called");
     return true
   }
   componentDidMount(){
-    console.log("MainApp's componentDidMount was called")
+    console.log("MainApp's componentDidMount was called");
   }
   render(){
     console.log("MainApp's render was called");
     return <div>
           <h1>Main Component</h1>
-          <ChildComp/>
+          <button onClick={ ()=>{ this.setState({ power : this.state.power + 1 })}}>Increase Power</button>
+          <button onClick={ ()=>{ this.setState({ show : !this.state.show})}}>Show / Hide</button>
+          {
+            this.state.show ? <ChildComp pow={ this.state.power }/> : ''
+          }
         </div> 
   }
 }
