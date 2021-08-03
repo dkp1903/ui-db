@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [13,7,23,4,9,10,15,99,81,72,45,50,54,66];
+        var doubleArr = [];
+        /*         
+        for(var i = 0; i < arr.length; i++){
+            console.log(arr[i]);
+        }; 
+        */
+        /*         
+        arr.forEach(function(val,idx,arr){
+           // console.log(arr[idx]);
+            console.log(val);
+        }) */
+       /*  
+      // FOREACH
+        arr.forEach(function(val,idx,arr){
+            doubleArr.push(val * 2);
+        });
+        console.log(doubleArr); 
+      */
+      // MAP
+     /*  
+     doubleArr = arr.map(function(val, idx, arr){
+        return val * 2;
+      });
+      console.log(doubleArr); */ 
+    // FILTER
+     /*  
+     var moreThan50 = arr.filter(function(val, idx, arr){
+        return val > 50;
+      });
+      console.log(moreThan50); 
+      */
+    // EVERY
+    /*        
+    var allLessThan50 = arr.every(function(val, idx, arr){
+        return val < 50;
+      });
+      console.log(allLessThan50); // false */
+    // SOME
+    /* 
+      var someMoreThan50 = arr.some(function(val, idx, arr){
+        return val > 50;
+      });
+      console.log(someMoreThan50); // true
+    */
+    // REDUCE
+    /*     
+    var total = arr.reduce(function( initVal,val, idx, ar){
+        return initVal + val;
+    },0);
+    console.log(total);//  */
+    // REDUCE RIGHT
+    /*     
+    var total = arr.reduceRight(function( initVal,val, idx, ar){
+        return initVal + val;
+    },0);
+    console.log(total);  
+    */
+    var locationOf10 = arr.indexOf(10);
+    console.log(locationOf10);
+    </script> 
+</head>
+<body>
+    
+</body>
+</html>

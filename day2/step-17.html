@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let promise = function prom() { 
+        return new Promise(function(resolve, reject) {
+        setTimeout(function(){
+            if(true)
+                resolve("Success")
+            else
+                reject("error")
+        }, 4000)
+    })
+    }
+    // promise.then(function(res){
+    //     console.log(res)
+    // }, function (err){
+    //     console.log(err)
+    // })
+
+    const a = async () => {
+        console.log('starting')
+        const res = await promise()
+        console.log(res)
+    }
+    a()
+</script>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    class Person{
+            constructor(ncity){
+                this.city = ncity;
+            }
+        }
+
+        class Hero extends Person{
+            _mission = "secret mission";
+            constructor(rtitle, rfname, rlname, pcity){
+                super(pcity);
+                this.title = rtitle;
+                this.firstname = rfname;
+                this.lastname = rlname;
+            }
+            static getVersion(){
+                return 10001;
+            }
+            get mission(){
+                return this._mission;
+            }
+            set mission(nmission){
+                this._mission = nmission;
+            }
+            fullname(){
+                return this.firstname+" "+this.lastname;
+            }
+        }
+        var hero1 = new Hero("Batman","Bruce","Wayne","Gotham");
+        var hero2 = new Hero("Ironman","Tony","Stark","New York");
+        // console.log( hero1.getVersion() );//wont work
+        console.log( Hero.getVersion() );// 
+        // console.log(hero1.title);
+        // console.log(hero1.firstname);
+        // console.log(hero1.lastname);
+        console.log(hero1.fullname()); 
+        // console.log(hero1.mission);
+
+        console.log(hero2.fullname()); 
+
+        console.log(hero1.fullname === hero2.fullname);//
+        console.log(hero1.mission);
+        hero1.mission = "Save the planet";
+        console.log(hero1.mission);
+        console.log(hero1.city);
+</script>
+<body>
+    
+</body>
+</html>

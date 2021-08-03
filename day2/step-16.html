@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var heroeslist = [
+            {
+                photo : 'images/batman.jpg',
+                title : "Bruce Wayne",
+                power : 7
+            },
+            {
+                photo : 'images/spiderman.jpg',
+                title : "Peter Parker",
+                power : 6
+            },
+            {
+                photo : 'images/captainamerica.jpg',
+                title : "Steve Rogers",
+                power : 10
+            },
+            {
+                photo : 'images/hulk.jpg',
+                title : "Bruce Benner",
+                power : 8
+            }
+        ];
+            onload = () => {
+                heroeslist.forEach(function(val, idx, arr)) {
+                    document.getElementsByClassName("container")
+                }
+            }
+    </script>
+    <style>
+        .box{
+            width: 200px;
+            background-color: lightseagreen;
+            border: 10px solid lightslategray;
+            margin: 10px;
+            float: left;
+        }
+        .box img{
+            width: 100%;
+        }
+        .box h1{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        input[type ^= 'r']{
+           display: inline-block;
+           width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <img src="images/hulk.jpg" alt="">
+            <h1>Bruce Benner</h1>
+            <input type="range" value="8" max="10" min="0">
+        </div>
+    </div>
+    
+</body>
+</html>
