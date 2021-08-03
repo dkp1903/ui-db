@@ -1,0 +1,102 @@
+index.js
+========
+import React from 'react';
+import ReactDOM from 'react-dom';
+import GrandComponent from './components/grand.component';
+ 
+ 
+function MainApp(){
+  return<div>
+        <h1>Context API</h1>
+        <GrandComponent/>
+      </div>
+}
+ 
+ReactDOM.render(<MainApp/>,
+  document.getElementById('root')
+);
+ 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+family.context.jsx
+====================
+ 
+import React from 'react';
+ 
+let FamilyContext = React.createContext();
+ 
+// export let FamilyContext.Consumer = FamilyContext.Consumer;
+// export let FamilyContext.Provider = FamilyContext.Provider;
+ 
+export default FamilyContext;
+ 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+grand.component.jsx
+===================
+ 
+import { Component } from "react";
+import FamilyContext from "../context/family.context";
+import ParentComponent from "./parent.component";
+ 
+class GrandComponent extends Component{
+    state = {
+        power : 0
+    }
+    increasePower = ()=>{
+        this.setState({
+            power : this.state.power + 1
+        })
+    }
+    render(){
+        return <div className="comp">
+                    <h1>Grand Parent Component</h1>
+                    <button onClick={ this.increasePower }>Increase Power</button>
+                    {/* <ParentComponent pow={ this.state.power }/> */}
+                    <FamilyContext.Provider value={ this.state.power }>
+                        <ParentComponent/>
+                    </FamilyContext.Provider>
+               </div>
+    }
+}
+ 
+export default GrandComponent;
+ 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+parent.component.jsx
+====================
+ 
+import { Component } from "react";
+import ChildComponent from "./child.component";
+ 
+class ParentComponent extends Component{
+    render(){
+        return <div className="comp">
+                    <h1>Parent Component</h1>
+                    {/* <ChildComponent pow={ this.props.pow }/> */}
+                    <ChildComponent/>
+               </div>
+    }
+}
+ 
+export default ParentComponent;
+ 
+ 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+child.component.jsx
+====================
+ 
+import { Component } from "react";
+import FamilyContext from "../context/family.context";
+ 
+class ChildComponent extends Component{
+    render(){
+        return <div className="comp">
+                    <h1>Child Component</h1>
+                    <hr />
+                    {/* <h2>Power is : { this.props.pow }</h2> */}
+                   <FamilyContext.Consumer>{ (value)=>  <h2>Power is : { value }</h2>}</FamilyContext.Consumer>
+               </div>
+    }
+}
+ 
+export default ChildComponent;
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
