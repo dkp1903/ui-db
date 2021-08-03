@@ -1,51 +1,72 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 /*
-you must return a single root element or React.Fragment or its alias <>
-events must be camel cased
-inline elments must be closed
-class and for keywords are reserved
-className instead of class
-htmlFor instead of for
-inputs will become controlled by state by default 
-how ever you can use defaultValue to create uncontrolled input
-    <input defaultValue="hi"/>
+adding a component : Mount
+    constructor()
+    static getDerivedStateFromProps()
+    render()
+    componentDidMount()
+ 
+update a component : Update
+    static getDerivedStateFromProps()
+    shouldComponentUpdate()
+    render()
+    getSnapshotBeforeUpdate()
+    componentDidUpdate()
+ 
+remove a component : Remove
+    componentWillUnmount()
 */
 class ChildComp extends Component{
-  state = {
-    power : 0
-  }
-/*   
   constructor(){
     super();
-    this.increaseHandler = this.increaseHandler.bind(this);
-  } 
-*/
-  increaseHandler = ()=>{
-    this.setState({
-      power: this.state.power + 1
-    })
+    console.log("ChildComp's constructor was called")
   }
-  
+  static getDerivedStateFromProps(){
+    console.log("ChildComp's getDerivedStateFromProps was called")
+    return true
+  }
+  componentDidMount(){
+    console.log("ChildComp's componentDidMount was called")
+  }
+  shouldComponentUpdate(){
+    console.log("ChildComp's shouldComponentUpdate was called");
+    return true
+  }
+  getSnapshotBeforeUpdate(){
+    console.log("ChildComp's getSnapshotBeforeUpdate was called");
+  }
+  componentDidUpdate(){
+    console.log("ChildComp's componentDidUpdate was called");
+  }
+  componentWillUnmount(){
+    console.log("ChildComp's componentWillUnmount was called");
+  }
   render(){
-    return <>
-            <div>
-              <h1 className="box">Child Component</h1>
-              <h2>Power is : { this.state.power }</h2>
-              {/* <button onClick={ this.increaseHandler.bind(this) }>Increase Power</button> */}
-              <button onClick={ this.increaseHandler }>Increase Power</button>
-              <button>Decrease Power</button>
-            </div>
-          </>
+    console.log("ChildComp render was called")
+    return <div>
+      <h1>Child Component</h1>
+    </div>
   }
 }
 class MainApp extends Component{
+  constructor(){
+    super();
+    console.log("MainApp's constructor was called");
+  }
+  static getDerivedStateFromProps(){
+    console.log("MainApp's getDerivedStateFromProps was called")
+    return true
+  }
+  componentDidMount(){
+    console.log("MainApp's componentDidMount was called")
+  }
   render(){
+    console.log("MainApp's render was called");
     return <div>
-            <h1>Main Component</h1>
-            <hr/>
-            <ChildComp/>
-          </div>
+          <h1>Main Component</h1>
+          <ChildComp/>
+        </div> 
   }
 }
 ReactDOM.render(<MainApp/>,
